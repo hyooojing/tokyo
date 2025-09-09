@@ -1,12 +1,12 @@
 # 💛 tokyo 💛
 ## 250909📝
 ### 자바 개발을 위해 필요한 것
+Java SE의 구현체 -> JDK(Java Developer Kit)
+Open JDK  | Oracle JDK
+------------- | -------------
+Content Cell  | 응답성/JVM 성능이 뛰어남
+무료       | 상업용:무료
 
-    Java SE의 구현체 -> JDK(Java Developer Kit)
-    Open JDK  | Oracle JDK
-    ------------- | -------------
-    Content Cell  | 응답성/JVM 성능이 뛰어남
-    무료       | 상업용:무료
 
 > [!TIP]
 > 프로그램들이 JDK를 이용할 수 있도록 JAVA_HOME 환경 변수 생성 및 Path 환경 변수 수정
