@@ -6,7 +6,7 @@ Java SE의 구현체 -> JDK(Java Developer Kit)
 
 Open JDK  | Oracle JDK
 ------------- | -------------
-Content Cell  | 응답성/JVM 성능이 뛰어남
+지속적 향상  | 응답성/JVM 성능이 뛰어남
 무료       | 상업용:무료
 
 
