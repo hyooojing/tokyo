@@ -1,0 +1,21 @@
+package ch2;
+
+import java.util.Scanner;
+
+public class Hw1 {
+
+	public static void main(String[] args) {
+
+		// 1.치킨 주문 알림기
+		Scanner sc = new Scanner (System.in);
+		System.out.print("치킨을 주문해 주세요(마리): ");
+		int num = sc.nextInt();
+		
+		for (int i = 1; i <= num; i++) {
+			System.out.println("치킨 " + i + "마리 주문이요");
+		}
+		
+		// 2.스쿼트 계산
+	}
+
+}

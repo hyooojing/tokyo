@@ -1,0 +1,21 @@
+package ch1;
+
+import java.util.Scanner;
+
+public class Hw2 {
+
+	public static void main(String[] args) {
+		
+		// 비밀번호 맞추기
+		String password = "qwer1234";
+		Scanner sc = new Scanner(System.in);
+		String userPwd = sc.nextLine();
+		
+		if (userPwd.equals(password)) {
+			System.out.println("비밀번호가 맞아요!");
+		} else {
+			System.out.println("비밀번호가 틀렸어요!");
+		}
+	}
+
+}

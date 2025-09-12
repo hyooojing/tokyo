@@ -1,0 +1,11 @@
+package ch1;
+
+import java.util.Scanner;
+
+public class Scanner {
+
+	public static void main(String[] args) {
+		ScannerEx sc = new ScannerEx(System.in);
+	}
+
+}

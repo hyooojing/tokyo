@@ -1,0 +1,13 @@
+package ch1;
+
+public class Basic1 {
+
+	public static void main(String[] args) {
+		System.out.println("안녕?");
+		System.out.println(sum(3));
+	}
+	
+	public static int sum(int num) {
+		return num * 2;
+	}
+}

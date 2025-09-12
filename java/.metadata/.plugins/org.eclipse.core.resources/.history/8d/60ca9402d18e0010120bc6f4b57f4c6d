@@ -1,0 +1,26 @@
+package ch1;
+
+/*
+	switch(key) {
+	case value: {
+		
+	}
+	default:
+			
+	}
+ */
+
+public class Control3 {
+
+	public static void main(String[] args) {
+		
+		switch(key) {
+		case value: {
+			
+		}
+		default:
+			
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+package ch1;
+
+/*
+	조건문이란?
+	조건이 참이면 실
+ */
+
+public class Control1 {
+
+	public static void main(String[] args) {
+		
+		// if문
+		
+		
+	}
+
+}

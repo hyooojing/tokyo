@@ -1,0 +1,59 @@
+package ch1;
+
+public class Hw1 {
+
+	public static void main(String[] args) {
+
+		int apple = 12;
+		int year = 2025;
+		int money = -1000;
+		double length = 9.8;
+		double score = 88.5;
+		double minusValue = -4.6;
+		String food = "떡볶이";
+		String city = "서울";
+		String hobby = "코딩";
+		boolean hasCar = false;
+		boolean isStudent = true;
+		boolean isWeekend = false;
+		
+		int a = 10;
+		int b = 3;
+		System.out.println(a + b);
+		System.out.println(a - b);
+		System.out.println(a * b);
+		System.out.println(a / b);
+		System.out.println(a % b);
+
+		int sum = 12 + 8;
+		int total = 20 / 3;
+		int mod = 14 % 5;
+		
+		System.out.println(5 / 7);
+		
+		/*
+			5. 5 % 5 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 5의 몫이 1이고 나머지가 0이므로 %의 결과에 대해서는 해당 연산의 나머지 값인 0
+			
+			6. 5 % 4 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 4의 몫은 1이고 나머지가 1이므로 %의 결과는 1
+			
+			7. 5 % 3 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 3의 몫은 1이고 나머지가 2이므로 %의 결과는 2
+			
+			8. 5 % 2 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 2의 몫은 2이고 나머지가 1이므로 %의 결과는 1
+			
+			9. 5 % 1 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 1의 몫은 5이고 나머지가 0이므로 %의 결과는 0
+			
+			10. 5 % 7 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+			5 / 7의 몫은 0이고 나머지가 
+			
+			11. 5 % 0 의 결과를 도출하는 과정 서술(왜 그런 결과값을 가지는가에 대해)
+		
+		
+		 */
+	}
+
+}

@@ -1,0 +1,11 @@
+# Eclipse 불필요 파일
+.classpath
+.project
+.settings/
+
+# Build 결과
+bin/
+
+# macOS 시스템 파일
+.DS_Store
+

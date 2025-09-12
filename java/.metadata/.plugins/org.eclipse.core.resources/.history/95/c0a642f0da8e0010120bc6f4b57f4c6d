@@ -1,0 +1,14 @@
+package ch1;
+
+import java.util.Random;
+
+public class RandomEx1 {
+
+	public static void main(String[] args) {
+		
+		// Random 랜덤 도구 객체 설
+		Random random = new Random();
+		int num = random.nextInt();	// 
+	}
+
+}
