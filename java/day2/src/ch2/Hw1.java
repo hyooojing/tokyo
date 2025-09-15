@@ -31,8 +31,10 @@ public class Hw1 {
 		System.out.println("====================");
 		System.out.print("숫자를 입력해 주세요: ");
 		int num = sc.nextInt();
-		if (num % 2 == 0)
-			System.out.println(num);
+		for (int i = 1; i <= num; i++) {
+			if (i % 2 == 0)
+				System.out.println(i);
+		}
 		
 		// 4.두 수를 입력 받아 그 사이 숫자 모두 출력
 		System.out.println("====================");
@@ -41,7 +43,7 @@ public class Hw1 {
 		System.out.print("두번째 숫자를 입력하세요: ");
 		int num2 = sc.nextInt();
 		
-		for (int i = num1; i <= num2; i++) {
+		for (int i = num1 + 1 ; i < num2; i++) {
 			System.out.println(i);
 		}
 		
