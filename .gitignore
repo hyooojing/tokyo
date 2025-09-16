@@ -9,3 +9,5 @@ bin/
 # macOS 시스템 파일
 .DS_Store
 
+# Eclipse 워크스페이스 메타데이터
+java/.metadata/

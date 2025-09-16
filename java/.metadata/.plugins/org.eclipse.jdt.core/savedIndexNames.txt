@@ -1,6 +1,0 @@
-INDEX VERSION 1.134+/Users/sonhyojeong/gitEx/tokyo/java/.metadata/.plugins/org.eclipse.jdt.core
-3619769358.index
-1865797976.index
-969878818.index
-1321737652.index
-2813048961.index
