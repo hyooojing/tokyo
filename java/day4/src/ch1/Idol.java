@@ -5,6 +5,10 @@ public class Idol {
 	String position;
 	String group;
 	
+	public Idol() {
+		super();
+	}
+	
 	public Idol(String name, String position, String group) {
 		super();
 		this.name = name;

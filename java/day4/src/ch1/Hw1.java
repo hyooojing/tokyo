@@ -4,7 +4,7 @@ public class Hw1 {
 
 	public static void main(String[] args) {
 		
-		// 1. 케데헌 아이돌객체 생성
+		// 1. 케데헌 아이돌 객체 생성
 		Idol idol = new Idol("루미", "보컬", "헌트릭스");
 		
 		// 2. 피자 정보 출력
