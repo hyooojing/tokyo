@@ -38,7 +38,7 @@ java 명령어는 JDK와 함께 설치된 자바 가상 머신(JVM)을 구동시
 ### ✔ 배열 변수 선언
 타입[] 변수;  | 타입 변수[];
 ------------- | -------------
-int[] intArray  | int intArray[];
+int[] intArray;  | int intArray[];
 double[] doubleArray;       | double doubleArray[];
 String[] strArray;  | String strArray[];
 
