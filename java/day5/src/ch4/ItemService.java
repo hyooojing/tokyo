@@ -6,59 +6,80 @@ import java.util.Scanner;
 public class ItemService {
 
 	private ItemDAO dao;
+	private ItemDTO dto;
 	Scanner sc = new Scanner(System.in);
 	private static int idCounter = 1;
-	
+	private int nextId;
+
+	// 파일에서 제일 큰 상품번호 구하기
 	public ItemService(ItemDAO dao) {
 		super();
 		this.dao = dao;
+		this.nextId = getId() + 1;
 	}
-	
-	// 아이템 저장
+
+	// 아이디 1씩 자동 증가
+	private int getId() {
+		int max = 0;
+		for(ItemDTO dto : dao.findAll()) {
+			if(dto.getId() > max) {
+				max = dto.getId();
+			}
+		}
+		return max;
+	}
+
+	// 상품 추가 (csv 파일)
+	public void saveAllItems(String name, int qty, int price) {
+		ItemDTO dto = new ItemDTO(nextId++, name, qty, price);
+		dao.save(dto);
+	}
+
+	// 아이템 저장 (콘솔)
 	public void addItem(String name, int qty, int price) {
 		ItemDTO dto = new ItemDTO(idCounter++, name, qty, price);
 		dao.save(dto);
 	}
-	
+
 	// 상품 합계
 	public int getTotal() {
 		List<ItemDTO> item = getAllItem();
 		if (item.isEmpty())
 			return 0;
 		int total = 0;
-		for(ItemDTO dto : item) {
+		for (ItemDTO dto : item) {
 			total += dto.getTotal();
 		}
 		return total;
 	}
-	
+
 	// 전체 상품 조회
 	public List<ItemDTO> getAllItem() {
 		return dao.findAll();
 	}
-	
+
 	// 개별 상품 조회
 	public ItemDTO getItemById(int p_id) {
 		return dao.findById(p_id);
 	}
-	
+
 	// 개별 상품 삭제
 	public boolean removeItem(int p_id) {
-	    ItemDTO item = dao.findById(p_id);
-	    if (item == null) {
-	        return false;
-	    }
-	    return dao.delete(item);
+		ItemDTO item = dao.findById(p_id);
+		if (item == null) {
+			return false;
+		}
+		return dao.delete(item);
 	}
-	
+
 	// 개별 상품 수정
 	public boolean modifyItem(ItemDTO item, String name, int qty, int price) {
-	    return dao.updateProduct(item, name, qty, price);		
+		return dao.updateProduct(item, name, qty, price);
 	}
-	
+
 	// 상품 상태 현황 체크
 	public boolean checkEmptyList() {
-	    return dao.findAll().isEmpty();
+		return dao.findAll().isEmpty();
 	}
 
 }

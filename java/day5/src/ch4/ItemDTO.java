@@ -1,5 +1,7 @@
 package ch4;
 
+import java.text.DecimalFormat;
+
 /*
 	<요구사향>
 	아이템 번호(자동 조절), 아이템명, 수량, 가격, 합계
@@ -77,9 +79,12 @@ public class ItemDTO {
 		return String.format("%,d원", money);
 	}
 	
+	DecimalFormat df = new DecimalFormat("#,###");
+	
 	@Override
 	public String toString() {
+		return String.format("번호: %d | 상품명: %s | 수량: %d개 | 가격: %s원 | 합계: %s원 ", id, name, qty, df.format(price), df.format(total));
 		// return "상품번호: " + id + ", 상품명: " + name + ", 상품수량: " + qty + ", 상품가격: " + price + ", 상품합계: " + total;
-		return String.format("번호: %d, 상품명: %s, 수량: %d, 가격: %s, 합계: %s", id, name, qty, formatMoney(price), formatMoney(total));
+		// return String.format("번호: %d, 상품명: %s, 수량: %d, 가격: %s, 합계: %s", id, name, qty, formatMoney(price), formatMoney(total));
 	}
 }

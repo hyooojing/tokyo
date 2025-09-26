@@ -3,10 +3,10 @@ package ch4;
 public class ItemMain {
 
 	public static void main(String[] args) {
-		
-		ItemDAO dao = new ItemDAO();
+		String filename = "DB/items.csv";
+		ItemDAO dao = new ItemDAO(filename);
 		ItemService service = new ItemService(dao);
-		ItemController controller = new ItemController(service);
+		ItemsController controller = new ItemsController(service);
 		
 		controller.run();
 	}
