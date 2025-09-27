@@ -71,7 +71,7 @@ public class ItemDAO {
 	}
 	
 	// 상품 저장할 때 csv 파일에 함께 저장
-	private void writeCsv() {
+	public void writeCsv() {
 		try(PrintWriter pw = new PrintWriter(new FileWriter(filename))) {
 			pw.println("id,name,qty,price");		// 머릿말
 			

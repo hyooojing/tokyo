@@ -69,12 +69,20 @@ public class ItemService {
 		if (item == null) {
 			return false;
 		}
-		return dao.delete(item);
+		boolean result =  dao.delete(item);
+		if (result) {
+			dao.writeCsv();
+		}
+		return result;
 	}
 
 	// 개별 상품 수정
 	public boolean modifyItem(ItemDTO item, String name, int qty, int price) {
-		return dao.updateProduct(item, name, qty, price);
+		boolean result = dao.updateProduct(item, name, qty, price);
+		if (result) {
+			dao.writeCsv();
+		}
+		return result;
 	}
 
 	// 상품 상태 현황 체크

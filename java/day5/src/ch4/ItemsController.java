@@ -48,30 +48,75 @@ public class ItemsController {
 		}
 	}
 
-	// 상품 분
+	// 상품 분석
 	private void outReport() {
-	
-		
+		int itemCnt = service.getAllItem().size();
+		int itemTotal = service.getTotal();
+		System.out.println("등록된 전체 상품 수는 " + itemCnt + "개 입니다.");
+		System.out.println("등록된 전체 상품의 합계는 " + itemTotal + "원 입니다.");
 	}
 
 	// 상품 수정
 	private void updateItems() {
-		
-		
+	    if (service.checkEmptyList()) {
+	        System.out.println("저장된 상품이 없습니다.");
+	        return;
+	    }
+	    
+		System.out.println("수정를 원하는 상품 번호를 입력해 주세요");
+		int m_id = sc.nextInt();
+	    
+	    ItemDTO item = service.getItemById(m_id);
+	    System.out.print("수정할 상품명("+ item.getName() + "): ");
+	    String name = sc.next();
+	    System.out.print("수정할 수량(" + item.getQty() + "): ");
+	    int qty = sc.nextInt();
+	    System.out.print("수정할 가격(" + item.getPrice() +"): ");
+	    int price = sc.nextInt();
+
+	    if (service.modifyItem(item, name, qty, price)) {
+	        System.out.println("상품 수정 완료: " + name);
+	    } else {
+	        System.out.println("상품 수정 실패");
+	    }
 	}
 
 	// 상품 삭제
 	private void deleteItems() {
-		
-		
+	    if (service.checkEmptyList()) {
+	        System.out.println("저장된 상품이 없습니다.");
+	        return;
+	    }
+		 
+	    System.out.println("삭제할 상품 번호를 입력해 주세요");
+	    int r_id = sc.nextInt();
+	    boolean removed = service.removeItem(r_id);
+	    if (removed) {
+	        System.out.println("삭제 완료: " + r_id);
+	    } else {
+	        System.out.println("해당 ID의 상품이 없습니다: " + r_id);
+	    }
 	}
 
 	// 개별 상품 조회
 	private void outItemsById() {
-		
-		
+		// 상품 하나도 없을 때
+	    if (service.checkEmptyList()) {
+	        System.out.println("저장된 상품이 없습니다.");
+	        return;
+	    }
+	    
+		System.out.println("조회할 상품 번호를 입력해 주세요");
+		int p_id = sc.nextInt();
+		ItemDTO item = service.getItemById(p_id);
+		if (item != null) {
+			System.out.println(item);
+		} else {
+	        System.out.println("해당 ID의 상품이 없습니다: " + p_id);
+		}
 	}
 
+	// 상품 추가
 	private void addItems() {
 		System.out.println("상품명");
 		String name = sc.next();
@@ -82,9 +127,9 @@ public class ItemsController {
 		
 		service.saveAllItems(name, qty, price);
 		System.out.println("출력 완료");
-		
 	}
 
+	// 전체 상품 조회
 	private void outAllItems() {
 		
 		List<ItemDTO> list = service.getAllItem();
