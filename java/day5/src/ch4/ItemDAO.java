@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,17 +91,47 @@ public class ItemDAO {
 
 	// 개별 상품 목록 반환
 	public ItemDTO findById(int p_id) {
+		/*
 		for (ItemDTO dto : itemList) {
 			if (dto.getId() == p_id)
 				return dto;
 		}
 		return null;
+		*/
+		
+		return itemList.stream()
+				.filter(item -> item.getId() == p_id)
+				.findFirst()
+				.orElse(null);
 	}
 	
 	// 개별 상품 삭제
 	public boolean delete(ItemDTO product) {
 		return itemList.remove(product);
 	}
+	
+	/*
+	public boolean deleteById(int id) {
+		for (int i = 0; i < itemList.size(); i++) {
+			if (itemList.get(i).getId() == id) {
+				itemList.remove(i);
+				writeCsv();
+				return true;
+			}
+		}
+		return false;
+	}
+	 */
+	
+	/*
+	public boolean deleteById(int id) {
+		boolean removeItems = itemList.removeIf(item -> item.getId() == id);
+		if(removeItems) {
+			writeCsv();
+		}
+		return removeItems;
+	}
+	*/
 	
 	// 개별 상품 수정
 	public boolean updateProduct(ItemDTO product, String name, int qty, int price) {
